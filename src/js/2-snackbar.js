@@ -7,14 +7,14 @@ const formSubmitHandler = e => {
   e.preventDefault();
   const delay = e.target.elements.delay.value;
   const state = e.target.elements.state.value;
-  console.log(delay, state);
 
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (state === 'fulfilled') {
         resolve(delay);
+      } else {
+        reject(delay);
       }
-      reject(delay);
     }, delay);
   });
 
